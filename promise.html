@@ -1,0 +1,33 @@
+<!DOCTYPE >
+<html>
+	<head>
+		<title>promise测试</title>
+		
+	</head>
+	<body>		
+		<div>
+			promise 案例测试哦999~
+		</div>
+		<script src="newPromise.js"></script>
+		<script>
+			var resCode = 2;
+			var p = new NewPromise(function(resolve, reject){
+				var resData = {
+					name: '张三'
+				};
+				if(resCode !== 0) {
+					reject('数据异常~');
+					return;
+				}
+				resolve(resData);
+			});
+			console.log('p的值', p);
+			p.then(function(res){
+				console.log('返回值111：', res);
+			}, function(err){
+				console.log('异常处理222：', err);
+			});
+			console.log('p', p);
+		</script>
+	</body>
+</html>
